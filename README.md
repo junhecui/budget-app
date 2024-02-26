@@ -18,8 +18,13 @@ help solve this problem for myself, and anyone else who faces similar
 struggles with budgeting as I do.
 
 ## User Stories
-- As a user, I want to be able to create a **budget** and add it to a 
-- list of my other budgets.
+- As a user, I want to be able to create a **budget** with a name and add it
+  to a list of my other budgets.
 - As a user, I want to be able to delete a **budget** from the list.
-- As a user, I want to be able to add **expenses** to my budget.
-- As a user, I want to be able to add **income** to my budget.
+- As a user, I want to be able to add **expenses** to my budget as well as
+  the name of the expense.
+- As a user, I want to be able to add **income** sources to my budget as well
+  as the name of the income source.
+- As a user, I want to be able to view my **total expenses**.
+- As a user, I want to be able to view my **total income**.
+- As a user, I want to be able to view my **net income** (expenses - income).
