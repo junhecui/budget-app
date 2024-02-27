@@ -1,6 +1,5 @@
 package ui;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 import model.Expense;
@@ -106,10 +105,10 @@ public class BudgetApp {
     }
 
     //
-    private double doFindCost() {
+    private void doFindCost() {
         System.out.print("Enter the name of the expense you wish to find the cost of: ");
         String name = input.next();
 
-        System.out.print("The cost of " + name + " is: $" + expenses.findCost(name);
+        System.out.print("The cost of " + name + " is: $" + expenses.findCost(name));
     }
 }
