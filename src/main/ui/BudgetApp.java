@@ -4,28 +4,13 @@ import java.util.Scanner;
 
 import model.Expense;
 import model.ListOfExpense;
-import persistence.JsonReader;
-import persistence.JsonWriter;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
-import java.util.Scanner;
 
 public class BudgetApp {
-    private static final String JSON_STORE = "./data/budget.json";
-    private ListOfExpense expenses;
+    private ListOfExpense expenses = new ListOfExpense();
     private Scanner input;
-    private JsonWriter jsonWriter;
-    private JsonReader jsonReader;
-
 
     // EFFECTS: runs the budget app
-    public BudgetApp() throws FileNotFoundException {
-        input = new Scanner(System.in);
-        expenses = new ListOfExpense("Jun He");
-        jsonWriter = new JsonWriter(JSON_STORE);
-        jsonReader = new JsonReader(JSON_STORE);
+    public BudgetApp() {
         runApp();
     }
 
@@ -35,7 +20,7 @@ public class BudgetApp {
         boolean keepGoing = true;
         String command = null;
 
-        input = new Scanner(System.in);
+        init();
 
         while (keepGoing) {
             displayMenu();
@@ -52,38 +37,26 @@ public class BudgetApp {
         System.out.print("\nGoodbye!");
     }
 
-    // MODIFIES: this
-    // EFFECTS: processes user command
     private void processCommand(String command) {
-        switch (command) {
-            case "add":
-                doAdd();
-                break;
-            case "remove":
-                doRemove();
-                break;
-            case "total":
-                doTotal();
-                break;
-            case "show":
-                doShowNames();
-                break;
-            case "cost":
-                doFindCost();
-                break;
-            case "save":
-                doSaveList();
-                break;
-            case "load":
-                doLoadList();
-                break;
-            default:
-                System.out.println("Invalid command!");
-                break;
+        if (command.equals("add")) {
+            doAdd();
+        } else if (command.equals("remove")) {
+            doRemove();
+        } else if (command.equals("total")) {
+            doTotal();
+        } else if (command.equals("show")) {
+            doShowNames();
+        } else if (command.equals("cost")) {
+            doFindCost();
+        } else {
+            System.out.println("Invalid command!");
         }
     }
 
-    // EFFECTS: displays options user can choose from
+    private void init() {
+        input = new Scanner(System.in);
+    }
+
     private void displayMenu() {
         System.out.println("\nSelect from:");
         System.out.println("\nadd -> Add expense");
@@ -91,8 +64,6 @@ public class BudgetApp {
         System.out.println("\ntotal -> Total expense");
         System.out.println("\nshow -> Shows the names of all expenses");
         System.out.println("\ncost -> Find cost of an expense from name");
-        System.out.println("\nsave -> Saves list of expenses to file");
-        System.out.println("\nload -> Loads list of expenses to file");
     }
 
     // MODIFIES: this
@@ -133,39 +104,11 @@ public class BudgetApp {
         }
     }
 
-    // EFFECTS: returns the cost of a specific expense
+    //
     private void doFindCost() {
         System.out.print("Enter the name of the expense you wish to find the cost of: ");
         String name = input.next();
-        double cost = expenses.findCost(name);
 
-        if (cost == -1) {
-            System.out.println("Cannot find item!");
-        } else {
-            System.out.print("Your cost is" + expenses.findCost(name));
-        }
-    }
-
-    // EFFECTS: saves the list of expenses to file
-    private void doSaveList() {
-        try {
-            jsonWriter.open();
-            jsonWriter.write(expenses);
-            jsonWriter.close();
-            System.out.println("Saved to " + JSON_STORE);
-        } catch (FileNotFoundException e) {
-            System.out.println("Unable to write to file: " + JSON_STORE);
-        }
-    }
-
-    // MODIFIES: this
-    // EFFECTS: loads the list of expenses from file
-    private void doLoadList() {
-        try {
-            expenses = jsonReader.read();
-            System.out.println("Loaded from " + JSON_STORE);
-        } catch (IOException e) {
-            System.out.println("Unable to read from file: " + JSON_STORE);
-        }
+        System.out.print("The cost of " + name + " is: $" + expenses.findCost(name));
     }
 }

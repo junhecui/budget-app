@@ -6,12 +6,12 @@
             "name": "Big Mac"
         },
         {
-            "amount": 2,
+            "amount": 3,
             "name": "Drink"
         },
         {
             "amount": 3,
-            "name": "Fries"
+            "name": "Drink"
         }
     ]
 }

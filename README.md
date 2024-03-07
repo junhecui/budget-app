@@ -24,5 +24,3 @@ struggles with budgeting as I do.
 - As a user, I want to be able to **view all the names** of my expenses.
 - As a user, I want to be able to **total** my expenses.
 - As a user, I want to be able to **find the cost** of an expense from its name.
-- As a user, I want to be able to **save** my expenses to a file.
-- As a user, I want to be able to **load** my expenses from a file.
