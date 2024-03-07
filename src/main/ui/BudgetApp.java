@@ -55,33 +55,25 @@ public class BudgetApp {
     // MODIFIES: this
     // EFFECTS: processes user command
     private void processCommand(String command) {
-        switch (command) {
-            case "add":
-                doAdd();
-                break;
-            case "remove":
-                doRemove();
-                break;
-            case "total":
-                doTotal();
-                break;
-            case "show":
-                doShowNames();
-                break;
-            case "cost":
-                doFindCost();
-                break;
-            case "save":
-                doSaveList();
-                break;
-            case "load":
-                doLoadList();
-                break;
-            default:
-                System.out.println("Invalid command!");
-                break;
+        if ("add".equals(command)) {
+            doAdd();
+        } else if ("remove".equals(command)) {
+            doRemove();
+        } else if ("total".equals(command)) {
+            doTotal();
+        } else if ("show".equals(command)) {
+            doShowNames();
+        } else if ("cost".equals(command)) {
+            doFindCost();
+        } else if ("save".equals(command)) {
+            doSaveList();
+        } else if ("load".equals(command)) {
+            doLoadList();
+        } else {
+            System.out.println("Invalid command!");
         }
     }
+
 
     // EFFECTS: displays options user can choose from
     private void displayMenu() {
