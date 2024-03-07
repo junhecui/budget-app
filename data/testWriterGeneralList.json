@@ -1,0 +1,17 @@
+{
+    "name": "Jun He",
+    "expenses": [
+        {
+            "amount": 5,
+            "name": "Big Mac"
+        },
+        {
+            "amount": 2,
+            "name": "Drink"
+        },
+        {
+            "amount": 3,
+            "name": "Fries"
+        }
+    ]
+}

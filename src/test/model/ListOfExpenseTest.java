@@ -15,7 +15,7 @@ public class ListOfExpenseTest {
 
     @BeforeEach
     public void setUp() {
-        expenses = new ListOfExpense();
+        expenses = new ListOfExpense("Jun He");
         car = new Expense("Toyota RAV-4", 30000.00);
         burger = new Expense("Big Mac", 5.50);
         rent = new Expense("Rent", 2200.00);
