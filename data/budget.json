@@ -8,6 +8,10 @@
         {
             "amount": 3,
             "name": "Fries"
+        },
+        {
+            "amount": 2,
+            "name": "Drink"
         }
     ]
 }

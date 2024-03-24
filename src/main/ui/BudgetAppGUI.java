@@ -233,7 +233,7 @@ public class BudgetAppGUI extends JFrame implements ActionListener, ListSelectio
     }
 
     // MODIFIES: this
-    // EFFECTS: removes account and takes it off GUI
+    // EFFECTS: removes expense and takes it off GUI
     public void removeFunction() {
         int index = expenseList.getSelectedIndex();
         Expense e = expenses.get(index);
@@ -252,7 +252,7 @@ public class BudgetAppGUI extends JFrame implements ActionListener, ListSelectio
     }
 
     // MODIFIES: BUDGET
-    // EFFECTS: saves accounts to JSON file
+    // EFFECTS: saves expenses to JSON file
     public void saveFunction() {
         try {
             jsonWriter.open();
@@ -263,15 +263,15 @@ public class BudgetAppGUI extends JFrame implements ActionListener, ListSelectio
         }
     }
 
-    // EFFECT: loads accounts from JSON file
+    // EFFECT: loads expenses from JSON file
     public void loadFunction() {
         try {
             ListOfExpense loe = jsonReader.read();
             int size = loe.count();
             for (int i = 0; i < size; i++) {
-                Expense ca = loe.getExpense(i);
-                expenses.add(ca);
-                expenseModel.addElement(ca.toString());
+                Expense e = loe.getExpense(i);
+                expenses.add(e);
+                expenseModel.addElement(e.toString());
             }
         } catch (IOException e) {
             System.out.println("Unable to read from file");
