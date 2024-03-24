@@ -26,3 +26,15 @@ struggles with budgeting as I do.
 - As a user, I want to be able to **find the cost** of an expense from its name.
 - As a user, I want to be able to **save** my expenses to a file.
 - As a user, I want to be able to **load** my expenses from a file.
+
+## Instructions For Grader
+- You can generate the first required action related to the user story "adding multiple Xs to a Y" by typing a name
+into the 'Expense Name' field, typing an amount into the 'Amount' field, and pressing the 'Add Expense' button.
+This will add an expense to the list.
+- You can generate the second required action related to the user story "adding multiple Xs to a Y" by selecting an
+expense from the list that you wish to remove and pressing the 'Remove Expense' button. This will remove the expense
+from the list.
+- You can locate my visual component by adding an expense (a frown will appear, more expenses D: ), as well as removing
+an expense (a smile will appear, less expenses!)
+- You can save the state of my application by pressing the 'Save Expenses' button.
+- You can reload the state of my application by pressing the 'Load Expenses' button.

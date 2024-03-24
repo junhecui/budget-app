@@ -57,9 +57,6 @@ public class BudgetAppGUI extends JFrame implements ActionListener, ListSelectio
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-//                for (Event el : EventLog.getInstance()) {
-//                    System.out.println(el.getDescription());
-//                }
                 System.exit(0);
             }
         });
