@@ -31,4 +31,9 @@ public class Expense implements Writable {
         return json;
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s - $%.2f", name, amount);
+    }
+
 }
