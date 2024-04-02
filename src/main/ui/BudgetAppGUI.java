@@ -226,7 +226,7 @@ public class BudgetAppGUI extends JFrame implements ActionListener, ListSelectio
     }
 
     // MODIFIES: this
-    // EFFECTS: adds account to list and displays it
+    // EFFECTS: adds expense to list and displays it
     public void addFunction() {
         String name = nameField.getText();
         double amount = Double.parseDouble(amountField.getText());
@@ -250,7 +250,7 @@ public class BudgetAppGUI extends JFrame implements ActionListener, ListSelectio
 
     // EFFECTS: makes list of type ListOfExpense
     public ListOfExpense loe() {
-        ListOfExpense loe = new ListOfExpense("Accounts");
+        ListOfExpense loe = new ListOfExpense("Expenses");
         for (Expense e : expenses) {
             loe.addExpense(e);
         }

@@ -1,7 +1,4 @@
 {
-    "name": "Accounts",
-    "expenses": [{
-        "amount": 30,
-        "name": "Cow"
-    }]
+    "name": "Expenses",
+    "expenses": []
 }
