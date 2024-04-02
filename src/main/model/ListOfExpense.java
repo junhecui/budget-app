@@ -32,6 +32,7 @@ public class ListOfExpense implements Writable {
     // MODIFIES: this
     // EFFECTS: adds an expense to end of list of expenses
     public void addExpense(Expense expense) {
+        EventLog.getInstance().logEvent(new Event("Added expense: " + expense.getName()));
         expenses.add(expense);
     }
 
@@ -41,6 +42,7 @@ public class ListOfExpense implements Writable {
     public void removeExpense(String expenseName) {
         for (int i = 0; i < expenses.size(); i++) {
             if (expenses.get(i).getName().equals(expenseName)) {
+                EventLog.getInstance().logEvent((new Event("Removed expense: " + expenses.get(i).getName())));
                 expenses.remove(i);
             }
         }

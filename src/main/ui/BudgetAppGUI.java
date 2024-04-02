@@ -4,6 +4,8 @@ import model.Expense;
 import model.ListOfExpense;
 import persistence.JsonReader;
 import persistence.JsonWriter;
+import model.Event;
+import model.EventLog;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -57,9 +59,13 @@ public class BudgetAppGUI extends JFrame implements ActionListener, ListSelectio
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
+                for (Event el : EventLog.getInstance()) {
+                    System.out.println(el.getDescription());
+                }
                 System.exit(0);
             }
         });
+
     }
 
     // EFFECTS: initializes the fields of the application
