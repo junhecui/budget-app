@@ -38,3 +38,25 @@ from the list.
 an expense (a smile will appear, less expenses!)
 - You can save the state of my application by pressing the 'Save Expenses' button.
 - You can reload the state of my application by pressing the 'Load Expenses' button.
+
+## Phase 4: Task 2
+Sample of events that occur when program runs:
+- Added expense: Burger 
+- Added expense: Fries
+- Removed expense: Fries
+- Added expense: Drink
+- Removed expense: Burger
+
+## Phase 4: Task 3
+The main thing that I believe could be
+refactored is the BudgetApp class, as it has
+an association with many classes, which presents
+a higher likelihood of bugs and errors occurring.
+
+To solve this and improve readability and reduce the 
+chance of bugs, the BudgetApp class
+could be split into smaller and more
+focused classes that could handle UI,
+expense management, and persistence individually.
+This would follow the Single Responsibility
+Principle, and make my code more readable.
